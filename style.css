@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-align: center;
+  background: url('assets/back_lampu.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  padding: 30px;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 12px rgba(255, 153, 0, 0.8);
+}
+.title span { color: #FF9900; }
+
+.nama {
+  margin-top: 15px;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #FF9900;
+  letter-spacing: 2px;
+}
+
+.icon { width: 170px; margin: 30px 0; }
+
+.info { font-size: 1.2em; color: #eee; line-height: 1.6em; }
+
+.details {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detail-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1em;
+  color: #fff;
+  min-width: 140px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  flex: 1 1 200px;
+}
+
+.map-link {
+  color: #FF9900;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #FF9900;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  margin: 0 auto;
+  width: 90%;          /* tidak full, sejajar dengan box atas */
+  max-width: 400px;    /* biar proporsional */
+  box-sizing: border-box;
+}
+.btn:hover { background: #e68a00; }
+
+/* Musik */
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+}
+#musicBtn {
+  background: rgba(8, 187, 157, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+#musicBtn svg { width: 26px; height: 26px; stroke: white; fill: none; }
+
+/* Animasi bintang */
+.star {
+  position: fixed;
+  width: 2px; height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Dinamis highlight */
+.highlight {
+  font-weight: 700;
+  color: #FF9900;
+}
+
+/* Footer Transfer modern */
+.footer-transfer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #FF9900;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.footer-transfer p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+/* Footer Transfer Modern */
+.footer-transfer {
+  margin-top: 40px;
+  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.08);  /* transparan modern */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  max-width: 100%;
+}
+
+.footer-transfer .footer-intro {
+  display: block;
+  font-size: 0.95em;
+  font-weight: 400;          /* tidak bold, biar ringan */
+  color: #ddd;               /* abu-abu terang */
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+
+.footer-transfer .footer-details p {
+  margin: 6px 0;
+  font-size: 1.05em;
+  color: #fff;
+  font-weight: 600;          /* detail lebih tegas */
+  letter-spacing: 0.5px;
+}
+
+.footer-transfer .footer-details strong {
+  color: #FF9900;            /* highlight orange biar konsisten */
+  font-weight: 700;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 600px) {
+  .footer-transfer {
+    padding: 18px;
+    font-size: 0.95em;
+  }
+
+  .footer-transfer .footer-details p {
+    font-size: 1em;
+  }
+}
+

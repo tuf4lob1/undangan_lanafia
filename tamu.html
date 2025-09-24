@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Wisuda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="title">Gradu<span>ation</span></div>
+
+    <!-- Nama Wisudawan -->
+    <div class="nama">LA NAFIA A. SAADU, S.ARS</div>
+
+    <img src="assets/fto_wsdah.png" alt="Wisuda Icon" class="icon">
+
+    <div class="info">
+      Kepada Bapak/Ibu/Saudara/i
+    </div>
+
+    <!-- Nama Tamu Undangan -->
+    <div class="nama" id="tamuNamaBox">
+      <span id="tamuNama">Tamu Undangan</span>
+    </div>
+
+    <div class="details">
+      <div class="detail-box">📅 27 September 2025</div>
+      <div class="detail-box">🕛 12.00 WIT</div>
+      <div class="detail-box"> Kelurahan Kulaba
+        <a href="https://maps.app.goo.gl/rWqf3DLNTU9Qf4iB9" target="_blank" class="map-link">
+          📍 Lihat Lokasi
+        </a>
+      </div>
+    </div>
+
+    <!-- Tombol Lihat Undangan (langsung link) -->
+    <div class="btn-container">
+      <a href="undangan.html" class="btn">Lihat Undangan</a>
+    </div>
+
+    <!-- Musik -->
+    <div class="music-control">
+      <button id="musicBtn">
+        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21 5,3"/>
+        </svg>
+      </button>
+    </div>
+    <audio id="bgMusic" loop>
+      <source src="assets/lagu.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Script bintang dan musik -->
+  <script>
+
+ // ✅ Ambil nama tamu dari URL (query string ?nama=...)
+  const params = new URLSearchParams(window.location.search);
+  const namaTamu = params.get("nama");
+
+  if (namaTamu) {
+    document.getElementById("tamuNama").textContent = decodeURIComponent(namaTamu);
+  }
+
+    // Tambah bintang
+    const starCount = 40;
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (2 + Math.random() * 3) + 's';
+      document.body.appendChild(star);
+    }
+
+    // Musik kontrol
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+    const playIcon = document.getElementById("playIcon");
+    let isPlaying = false;
+
+    btn.addEventListener("click", () => {
+      if (isPlaying) {
+        music.pause();
+        playIcon.innerHTML = '<polygon points="5,3 19,12 5,21 5,3"/>';
+      } else {
+        music.play();
+        playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/>';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
